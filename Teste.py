@@ -2,8 +2,6 @@ import json
 from datetime import date, datetime
 from decimal import Decimal, ROUND_HALF_UP
 
-
-# Dados fornecidos no desafio.
 DADOS_VENDAS = {
     "vendas": [
         {"vendedor": "João Silva", "valor": 1200.50},
@@ -59,7 +57,6 @@ IDS_MOVIMENTACOES = set()
 
 
 def dinheiro(valor):
-    """Formata um número como moeda brasileira."""
     valor = Decimal(str(valor)).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
     return f"R$ {valor:.2f}".replace(".", ",")
 
